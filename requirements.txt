@@ -38,7 +38,7 @@ networkx==2.5
 numpy==1.20.1
 opencv-contrib-python
 opencv-python
-opencv-python-headless
+opencv-python-headless==4.2.0.32
 pandas==1.2.2
 Pillow==8.2.0
 prefetch-generator==1.0.1
