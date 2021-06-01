@@ -36,9 +36,9 @@ matplotlib==3.4.2
 munch==2.5.0
 networkx==2.5
 numpy==1.20.1
-opencv-contrib-python==3.4.2.16
-opencv-python==3.4.2.16
-opencv-python-headless==4.5.1.48
+opencv-contrib-python
+opencv-python
+opencv-python-headless
 pandas==1.2.2
 Pillow==8.2.0
 prefetch-generator==1.0.1
