@@ -95,10 +95,10 @@ class DiagnosisDetailView(RetrieveUpdateDestroyAPIView):
 # ==================================================
 
 
-# MyModel = Net_Efficientnet()
-# device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-# MyModel = load_checkpoint(MyModel, 'static/efficientNet/MAIN_model_fold_full_1.pth')
-#
+MyModel = Net_Efficientnet()
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+MyModel = load_checkpoint(MyModel, 'static/efficientNet/MAIN_model_fold_full_1.pth')
+
 
 def predicted(image_path, model, device):
     test_images = [image_path]
@@ -145,17 +145,17 @@ class predictView(APIView):
     def get(self, request, format=None):
         return Response("hello")
 
-    # def post(self, request):
-    #     record = DiagnosisRecord.objects.get(id=request.data['id'])
-    #     url = record.image_record.url
-    #     # print("url", url)
-    #     serializer = DiagnosisRecordSerializer(record)
-    #     final_predictions = predicted(url, MyModel, device)
-    #     probs = np.round(torch.sigmoid(torch.tensor(final_predictions))).cpu().detach().numpy()
-    #     print(np.round(torch.sigmoid(torch.tensor(final_predictions))).cpu().detach())
-    #     record.predict = probs
-    #     record.save()
-    #     data = {
-    #         'record': probs, 'data': serializer.data,
-    #     }
-    #     return Response(data, status=status.HTTP_200_OK)
+    def post(self, request):
+        record = DiagnosisRecord.objects.get(id=request.data['id'])
+        url = record.image_record.url
+        # print("url", url)
+        serializer = DiagnosisRecordSerializer(record)
+        final_predictions = predicted(url, MyModel, device)
+        probs = np.round(torch.sigmoid(torch.tensor(final_predictions))).cpu().detach().numpy()
+        print(np.round(torch.sigmoid(torch.tensor(final_predictions))).cpu().detach())
+        record.predict = probs
+        record.save()
+        data = {
+            'record': probs, 'data': serializer.data,
+        }
+        return Response(data, status=status.HTTP_200_OK)

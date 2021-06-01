@@ -54,8 +54,8 @@ class MelanomaDataset(torch.utils.data.Dataset):
 class Net_Efficientnet(nn.Module):
     def __init__(self,):
         super(Net_Efficientnet, self).__init__()
-        self.base_model = EfficientNet.from_pretrained('efficientnet-b7')
-        # self.base_model.load_state_dict(torch.load('static/efficientNet/model_fold_03.pth'))
+        # self.base_model = EfficientNet.from_pretrained('efficientnet-b7')
+        self.base_model.load_state_dict(torch.load('static/efficientNet//efficientnet-b7-dcc49843.pth'))
         self.fc = nn.Linear(self.base_model._fc.in_features, 1)
 
     def forward(self, image, target):
