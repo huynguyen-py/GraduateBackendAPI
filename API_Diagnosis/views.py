@@ -96,7 +96,7 @@ class DiagnosisDetailView(RetrieveUpdateDestroyAPIView):
 
 
 MyModel = Net_Efficientnet()
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 MyModel = load_checkpoint(MyModel, 'static/efficientNet/MAIN_model_fold_full_1.pth')
 
 

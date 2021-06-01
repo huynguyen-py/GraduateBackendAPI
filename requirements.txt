@@ -60,7 +60,7 @@ six==1.15.0
 sqlparse==0.4.1
 threadpoolctl==2.1.0
 tifffile==2021.3.16
-torch==1.8.1+cpu
+torch==1.6.0+cpu
 torchvision==0.9.1+cpu
 tqdm==4.60.0
 unicode==2.8
