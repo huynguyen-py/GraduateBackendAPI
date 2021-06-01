@@ -1,3 +1,4 @@
+-f https://download.pytorch.org/whl/torch_stable.html
 Django~=3.1.7
 djangorestframework~=3.12.2
 requests~=2.25.1
@@ -5,7 +6,8 @@ cloudinary~=1.25.0
 PyJWT~=2.0.1
 django-ckeditor~=6.0.0
 matplotlib~=3.4.2
-torch~=1.6.0
+torch==1.8.1+cpu
+torchvision==0.9.1+cpu
 Pillow~=8.2.0
 albumentations~=0.5.2
 tqdm~=4.60.0
