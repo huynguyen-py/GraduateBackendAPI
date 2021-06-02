@@ -61,7 +61,7 @@ sqlparse==0.4.1
 threadpoolctl==2.1.0
 tifffile==2021.3.16
 torch==1.6.0+cpu
-torchvision==0.9.1+cpu
+torchvision==0.7.0+cpu
 tqdm==4.60.0
 unicode==2.8
 Unidecode==1.2.0
