@@ -6,8 +6,8 @@ from PIL import Image
 
 
 def load_checkpoint(model, filepath):
-    # checkpoint = torch.load(filepath, map_location='cpu')
-    checkpoint=pickle.load(open(filepath,'rb'))
+    checkpoint = torch.load(filepath, map_location='cpu')
+    # checkpoint=pickle.load(open(filepath,'rb'))
     # model = checkpoint['model']
     model.load_state_dict(checkpoint)
     for parameter in model.parameters():
